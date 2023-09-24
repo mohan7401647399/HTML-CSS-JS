@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draggable element</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Draggable Div</header>
+      <div class="content">
+        <div class="icon"><i class="fa-solid fa-up-down-left-right"></i></div>
+        <div class="title">Draggable Div</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi
+          laudantium id magni voluptate quas ipsam quis praesentium rem
+          voluptatibus, dolores, unde molestias dolorum odit molestiae esse
+          eveniet harum dolorem consequuntur!
+        </p>
+      </div>
+    </div>
+    <script>
+      const wrapper = document.querySelector(".wrapper"),
+        header = document.querySelector("header");
+
+      function onDrag({ movementX, movementY }) {
+        let getStyle = window.getComputedStyle(wrapper);
+        let left = parseInt(getStyle.left);
+        let top = parseInt(getStyle.top);
+        wrapper.style.left = `${left + movementX}px`;
+        wrapper.style.top = `${top + movementY}px`;
+      }
+
+      header.addEventListener("mousedown", () => {
+        header.classList.add("active");
+        header.addEventListener("mousemove", onDrag);
+    });
+    document.addEventListener("mouseup", () => {
+          header.classList.remove("active");
+        header.removeEventListener("mousemove", onDrag);
+      });
+    </script>
+  </body>
+</html>
