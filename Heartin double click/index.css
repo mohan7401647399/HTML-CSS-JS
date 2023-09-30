@@ -1,0 +1,70 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-image: url(img.jpg);
+    height: 400px;
+    width: 500px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.container .heart {
+    font-size: 40px;
+    color: red;
+    position: absolute;
+    /* left: 50%;
+    top: 50%; */
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.heart.active {
+    animation: anime 0.8s linear infinite;
+    -webkit-animation: anime 0.8s linear infinite;
+}
+
+ @keyframes anime {
+    30% {
+        opacity: 1;
+        font-size: 80px;
+    }
+    50% {
+        opacity: 1;
+        font-size: 60px;
+    }
+    70% {
+        opacity: 1;
+        font-size: 70px;
+    }
+    80% {
+        opacity: 1;
+        font-size: 60px;
+    }
+    90% {
+        opacity: 1;
+        font-size: 60px;
+    }
+}
