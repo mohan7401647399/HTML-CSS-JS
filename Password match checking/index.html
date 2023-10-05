@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password_chk</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>Confirm password check in HTML_CSS_JS</header>
+      <form action="#">
+        <div class="err_txt">Confirm password not match</div>
+        <div class="field">
+          <input
+            type="password"
+            onkeyup="active()"
+            id="ps_1"
+            placeholder="Enter Password"
+          />
+        </div>
+        <div class="field">
+          <input
+            type="password"
+            onkeyup="active_2()"
+            id="ps_2"
+            disabled
+            placeholder="Confirm Password"
+          />
+          <div class="show">SHOW</div>
+        </div>
+        <button disabled>Check</button>
+      </form>
+    </div>
+  </body>
+</html>
