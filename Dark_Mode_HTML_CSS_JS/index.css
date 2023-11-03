@@ -1,0 +1,29 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #edf2fc;
+    /* --secondary-color: #212121; */
+}
+
+.dark-theme {
+    --secondary-color: #000106;
+    /* --secondary-color: #fff; */
+}
+
+html, body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+#icon {
+    width: 100px;
+    cursor: pointer;
+}
