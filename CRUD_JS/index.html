@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_JS</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body onload="readAll()">
+    <div class="container">
+        <div class="form_container">
+            <form action="form" class="create_form">
+                <input type="text" class="input" placeholder="Enter Your Name">
+                <input type="email" class="email" placeholder="Enter Your Email"></input>
+                <button type="button" onclick="add()">Create</button>
+            </form>
+            <form action="form" class="update_form">
+                <input type="text" class="id" hidden>
+                <input type="text" class="uinput">
+                <input type="email" class="uemail" placeholder="Enter Your Email"></input>
+                <button type="button" onclick="update()">Update</button>
+            </form>
+            <div class="add_name">
+                <button onclick="Create()">Add +</button>
+            </div>
+            <table>
+                <thead>
+                    <th class="tr">Name</th>
+                    <th class="tr">Email</th>
+                    <th class="tr">Action</th>
+                </thead>
+                <tbody id="d_table">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <script src="index.js"></script> -->
+</body>
+</html>
