@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark_mode</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="toggle"></div>
+    <script>
+      const body = document.querySelector("body"),
+        toggle = document.querySelector(".toggle");
+
+      let getMode = localStorage.getItem("mode");
+      if (getMode && getMode === "dark") {
+        body.classList.add("dark");
+        toggle.classList.add("active")
+      }
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (!body.classList.contains("dark")) {
+          return localStorage.setItem("mode", "light");
+        }
+        return localStorage.setItem("mode", "dark");
+      });
+
+      toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+    </script>
+  </body>
+</html>
